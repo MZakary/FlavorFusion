@@ -45,6 +45,7 @@ function ProjectDetail() {
       <div className='ColRight'>
         <h2>{recipe.title}</h2> 
         <p>{recipe.description}</p>
+        lol
       </div>
       {/* Add more project details as needed */}
     </section>
