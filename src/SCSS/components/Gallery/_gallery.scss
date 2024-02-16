@@ -1,0 +1,84 @@
+.Gallery{
+    @include add-margin-top-page;
+    //border: 1px solid green;
+
+    & h1{
+        color: $primary-blue;
+        @include Gotham-Font;
+        font-weight: bold;
+        text-align: center;
+        font-size: 50px;
+        text-transform: uppercase;
+    }
+
+    .HorizontalLine{
+        border-top: none;
+        border-bottom: 5px $primary-blue solid;
+        width: 25%;
+        margin: 15px auto;
+        
+        animation: slideAndFadeBottom 1s ease-in-out;
+    }
+
+
+
+    & .ProjectContainer{
+        @include add-margin-top;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        //border: 1px solid  blue;
+        
+        & .Project{
+            background-size: cover;
+            background-position: center;
+            //border: 1px solid red;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25); /* Adjust the values as needed */
+            
+            border-radius: 10px;
+            height: 200px;
+            width: 200px;
+            & a{
+                //border-radius: 10px;
+                //border: 2px solid transparent;
+                position: relative;
+                opacity: 0;
+                color: white;
+                height: 200px;
+                width: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 3;
+                transition-duration: 0.5s;
+                text-transform: uppercase;
+                font-weight: 500;
+
+
+
+               & p{
+                    z-index: 3;
+                    @include Gotham-Font;
+               }
+            }
+            & a:hover{
+                opacity: 1;
+                //animation: borderAnimation 0.5s forwards;
+            }
+
+            & a::before{
+                content: '';
+                position: absolute; /* Position the overlay layer relative to the container */
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5); /* Specify the overlay color with transparency */
+                border-radius: 10px; /* Match the parent's border-radius if needed */
+                z-index: 0;
+                
+            }
+        }
+        
+    }
+}

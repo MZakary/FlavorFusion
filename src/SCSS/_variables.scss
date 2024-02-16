@@ -1,0 +1,62 @@
+$primary-blue: rgb(0, 123, 255);
+$primary-green: #03C04A;
+$secondary-green: #028A0F;
+
+
+//Resets margin to 0
+@mixin reset-margin{
+    margin: 0;
+}
+
+@mixin add-margin-top{
+    margin-top: 50px;
+}
+
+@mixin add-margin-top-page{
+    margin-top: 100px;
+}
+
+@mixin add-padding-to-sides{
+    padding: 0 80px;
+}
+
+@mixin display-flex-j-center{
+    display: flex;
+    justify-content: center;
+}
+
+@mixin display-flex-a-center{
+    display: flex;
+    align-items: center;
+}
+@mixin display-flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin Gotham-Font{
+    font-family: 'Gotham', sans-serif;
+    font-weight: 400;
+}
+
+@mixin Fancy-Font{
+    font-family: 'Fancy', sans-serif;
+    font-family: 'FancyRounded', sans-serif;
+    font-family: 'FancySans', sans-serif;
+}
+
+@mixin CreateGreenButton{
+    margin: 15px 0;
+    padding: 16px 8px;
+    border-radius: 5px;
+    background-color: $primary-green;
+    color: white;
+}
+@mixin CreateBlueButton{
+    margin: 15px 0;
+    padding: 16px 8px;
+    border-radius: 5px;
+    background-color: $primary-blue;
+    color: white;
+}

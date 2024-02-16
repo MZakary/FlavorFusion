@@ -1,0 +1,6 @@
+.ProjectDetail{
+    @include add-margin-top-page;
+    //@include display-flex-j-center;
+    //gap: if you want to add a gap
+    gap: 50px;
+}

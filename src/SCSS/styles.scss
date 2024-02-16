@@ -1,0 +1,37 @@
+@import './variables';
+@import './fonts';
+@import './animations';
+@import './components/Modules/Nav/nav';
+@import './components/Modules/TwoCols/twoCols';
+@import './components/Modules/GridItems/gridItems';
+@import './components/Modules/PopUp/popUp';
+@import './components/Contact/contact';
+@import './components/Gallery/gallery';
+@import './components/Footer/footer';
+@import './components/Modules/FeaturedItems/featuredItems';
+@import './components/Modules/Carousel/carousel';
+@import './components/About/about';
+@import './components/ProjectDetail/projectDetail';
+@import './components/Modules/AboutUs/AboutUs.scss';
+
+/*Remove any underline on a*/
+a{
+  text-decoration: none;
+}
+
+
+body {
+  @include reset-margin;
+  background-color: #121212;
+  
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  flex-grow: 1; /* Grow to fill available space */
+}

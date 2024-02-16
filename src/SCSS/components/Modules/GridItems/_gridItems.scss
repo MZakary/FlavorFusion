@@ -1,0 +1,66 @@
+.GridItems {
+    @include add-margin-top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    
+    & .ItemContainer{
+        @include display-flex-j-center;
+        gap: 15px;
+        & .ParentDiv {
+          position: relative; /* Ensure the container is a positioned element */
+          height: 150px;
+          width: 150px;
+          padding: 10px;
+          //background-image: url('../../../../../public/Img/monkey.jpg');
+          background-size: cover;
+          background-position: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+          animation: slideAndFadeLeft 2s ease-in-out;
+      
+          &  .Items {
+              width: 100px;
+              height: 75px;
+              object-fit: fit;
+              z-index: 2;
+            }
+        
+          & .ItemNames {
+              color: white;
+              z-index: 2;
+              margin-top: 10px;
+              @include Gotham-Font;
+              text-transform: capitalize;
+              text-align: center;
+            }
+        
+            &::before {
+              content: '';
+              position: absolute; /* Position the overlay layer relative to the container */
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 128, 0, 0.5); /* Specify the overlay color with transparency */
+              border-radius: 10px; /* Match the parent's border-radius if needed */
+              z-index: 1; /* Ensure the overlay is above the background image (if needed) */
+            }
+        }
+    }
+  }
+  
+
+  @media (max-width: 768px){
+    .GridItems {
+      & .ItemContainer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Creates 2 equal-width columns */
+      }
+    }
+  }

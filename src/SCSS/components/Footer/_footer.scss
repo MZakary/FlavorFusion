@@ -1,0 +1,11 @@
+.Footer{
+    @include add-margin-top;
+    background-color: #1F1F1F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    padding-top: 15px;
+    color: white;
+    
+}

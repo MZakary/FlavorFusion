@@ -1,0 +1,70 @@
+.TwoCols{
+    @include add-margin-top;
+    @include display-flex-j-center;
+    //gap: if you want to add a gap
+    gap: 50px;
+
+    /*Controls both cols*/
+    & .col{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    /*Controls col 1*/
+    & .col1{
+        align-self: center;
+        justify-content: flex-end;
+        animation: slideAndFadeLeft 1s ease-in-out;
+        & .image{
+            height: 275px;
+        }
+    }
+
+    /*Controls col 2*/
+    & .col2{
+        align-self: center;
+        justify-content: flex-start;
+        animation: slideAndFadeRight 1s ease-in-out;
+
+        & .Text{
+            @include Gotham-Font;
+            font-size: 19px;
+            width: 55%;
+        }
+    }
+
+    & .VerticalLine{
+      width: 5px; /* Adjust the width as needed */
+      height: 300px; /* Adjust the height as needed */
+      align-self: center;
+      background-color: $primary-green; /* Adjust the color as needed */
+      animation: FadeIn 2s ease-in-out;
+    }
+}
+
+
+@media (max-width: 768px){
+    .TwoCols{
+        @include add-margin-top;
+        @include display-flex-a-center;
+        flex-direction: column;
+        justify-content: center;
+
+        & .col{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        & .col2{
+            & .Text{
+                align-self: center;
+            }
+        }
+
+        & .VerticalLine{
+            display: none;
+        }
+    }
+}

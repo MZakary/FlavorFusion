@@ -1,0 +1,160 @@
+.Contact{
+    @include add-margin-top-page;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    & .Form{
+        background-color: #1F1F1F;
+        border-radius: 0 20px 20px 0;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 50px 20px;
+        align-items: start;
+        @include Gotham-Font;
+    
+        & h2{
+            color: white;
+            & span{
+                color: $primary-blue;
+            }
+        }
+    
+        & .SubmitButton{
+            @include CreateBlueButton;
+            width: 75%;
+            font-size: 25px;
+            align-self: center;
+            
+        }
+
+        & .input-group-text{
+            background-color: #121212;
+            color: white;
+        }
+
+
+        & .input-group{
+            & .form-control{
+                background-color: #1F1F1F;
+                color: white;
+            }
+            & .form-control::placeholder{
+                color: white;
+            }
+            & .form-control:focus{
+                color: $primary-blue;
+                //background-color: var(--bs-body-bg);
+                border-color: $primary-blue;
+                outline: 0;
+                box-shadow: 0 0 0 0.25rem rgba(3, 116, 192, 0.25)
+            }
+        }
+
+        & .Inquiry{
+            display: flex;
+            flex-direction: column;
+            border-radius: 0;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            & .input-group-text{
+                width: 100%;
+                border-radius: 5px 5px 0 0;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            & .form-control{
+                height: 300px;
+                border-radius: 0 0 5px 5px;
+                width: 100%;
+                resize: none;
+                background-color: #1F1F1F;
+                color: white;
+            }
+            & .form-control::placeholder{
+                color: white;
+            }
+            & .form-control:focus{
+                color: $primary-blue;
+                //background-color: var(--bs-body-bg);
+                border-color: $primary-blue;
+                outline: 0;
+                box-shadow: 0 0 0 0.25rem rgba(3, 116, 192, 0.25)
+            }
+        }
+
+        
+    }
+
+    & .Image{
+        width: 30%;
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px 0 0 20px;
+        }
+        border-radius: 20px 0 0 20px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+    }
+}
+
+
+@media (max-width: 768px){
+    .Contact{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & .Form{
+            width: 80%;
+            border-radius: 0 0 10px 10px;
+            padding: 30px 20px;
+
+            & .input-group{
+                flex-direction: column;
+                align-items: center;
+                & .input-group-text{
+                    border-radius: 0;
+                    width: 100%;
+                }
+                & .form-control{
+                    width: 100%;
+                    border-radius: 0;
+                }
+            }
+
+
+            /*I want to vomit*/
+            .input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating), 
+            .input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3), 
+            .input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-control, 
+            .input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-select,
+            .input-group:not(.has-validation) > .your-custom-class {
+                border-top-right-radius: 5px;
+                border-top-left-radius: 5px;
+            }
+
+            .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback){
+                border-top-right-radius: 0px;
+                border-top-left-radius: 0px;
+            }
+        }
+
+        & .Image{
+            width: 80%;
+            border-radius: 10px 10px 0 0;
+
+            & img{
+                border-radius: 10px 10px 0 0;
+            }
+        }
+    }
+}

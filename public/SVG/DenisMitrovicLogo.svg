@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.45 42.64">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-1, .cls-4 {
+        fill: #35b44d;
+      }
+
+      .cls-2 {
+        fill: #8dc63f;
+      }
+
+      .cls-4 {
+        font-family: Gotham-Bold, Gotham;
+        font-size: 3.7px;
+        font-weight: 700;
+      }
+
+      .cls-5 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-7 {
+        fill: #231f20;
+        font-family: Gotham-Black, 'Gotham Black';
+        font-size: 4.79px;
+        font-weight: 800;
+      }
+
+      .cls-3 {
+        fill: #009444;
+      }
+
+      .cls-8 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-9 {
+        letter-spacing: -.09em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g>
+        <polygon class="cls-3" points="9.25 0 9.25 32.61 13 31.26 13 1.18 9.25 0"/>
+        <polygon class="cls-1" points="13.98 0 13.98 32.61 17.4 31.26 17.4 1.12 13.98 0"/>
+        <g>
+          <path class="cls-2" d="m18.13,0v32.61l15.19-4.66V4.6L18.13,0Zm13.11,26.15l-9.37,2.78-.05-25.13,9.42,2.78v19.58Z"/>
+          <rect class="cls-2" x="20.32" y="16.31" width="12.41" height="1.24"/>
+          <rect class="cls-2" x="15.12" y="16.12" width="24.06" height="1.24" transform="translate(10.41 43.89) rotate(-90)"/>
+        </g>
+      </g>
+      <text class="cls-7" transform="translate(0 38.23)"><tspan x="0" y="0">DENIS MITR</tspan><tspan class="cls-6" x="28.98" y="0">O</tspan><tspan x="32.75" y="0">VIC</tspan></text>
+      <text class="cls-4" transform="translate(6.64 42)"><tspan x="0" y="0">REN</tspan><tspan class="cls-8" x="8.09" y="0">O</tspan><tspan class="cls-5" x="11.07" y="0">V</tspan><tspan class="cls-9" x="13.48" y="0">A</tspan><tspan x="16.07" y="0">TIONS</tspan></text>
+    </g>
+  </g>
+</svg>

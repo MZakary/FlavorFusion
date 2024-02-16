@@ -1,0 +1,59 @@
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 400;
+    background-color: #1F1F1F;
+    box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.55); /* Adjust the values as needed */
+    transition-duration: 0.5s;
+    .nav-link,  .navbar-text{
+        //@include Gotham-Font;
+        @include Fancy-Font;
+        color: white;
+        
+    }
+    .nav-link:hover{
+        color: $primary-blue;
+    }
+    .nav-link:focus{
+        color: $primary-blue;
+    }
+    .isActive{
+        color: $primary-blue;
+        font-weight: 500;
+    }
+
+    .container-fluid{
+        transition-duration: 0.5s;
+    }
+
+    .logo{
+        height: 50px;
+    }
+
+    .collapse{
+        transition-duration: 0.5s;
+    }
+
+    & .searchBar{
+        border: 1px solid white;
+        color: white;
+    }
+    & .searchBar:hover{
+        border: 1px solid $primary-blue;
+        color: $primary-blue;
+    }
+
+    & .form-control:focus{
+        color: $primary-blue;
+        
+    }
+
+}
+
+@media (max-width: 768px){
+    .collapse{
+        transition-duration: 0.5s;
+    }
+    
+}

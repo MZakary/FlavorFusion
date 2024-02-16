@@ -1,0 +1,81 @@
+/* Modern About Section */
+.about-section {
+    @include add-margin-top;
+  }
+
+  .about-image{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+  
+  .about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-content {
+    padding-left: 40px;
+  }
+  
+  .about-heading {
+    font-size: 36px;
+    color: white;
+    margin-bottom: 30px;
+    @include Fancy-Font;
+    font-weight: bolder;
+  }
+  
+  .about-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: lightgray;
+    margin-bottom: 20px;
+    @include Gotham-Font;
+  }
+  
+  @media (max-width: 768px) {
+    .about-content {
+      padding-left: 0;
+      margin-top: 40px;
+    }
+  }
+  
+  /* Animation Classes */
+.animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  .animate__fadeInLeft {
+    animation-name: fadeInLeft;
+  }
+  
+  .animate__fadeInRight {
+    animation-name: fadeInRight;
+  }
+  
+  /* Keyframes */
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
