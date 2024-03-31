@@ -7,7 +7,7 @@ function Header(){
 
     return(
         <div>
-            <Nav logo={"/Img/Epic.jpg"} links={[
+            <Nav logo={"/Img/LogoTest.png"} links={[
                 { name: 'About Us', url: '/about-us' },
                 { name: 'Recipes', url: '/recipes' },
                 { name: 'logo', url: '/' },
