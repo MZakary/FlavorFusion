@@ -2,6 +2,17 @@ $primary-blue: rgb(0, 123, 255);
 $primary-green: #03C04A;
 $secondary-green: #028A0F;
 
+$primary-dark-background: #1a1a1a;
+$secondary-dark-background: #262626;
+$tertiary-dark-background: mix($primary-dark-background, $secondary-dark-background, 50%);
+$quaternary-dark-background:#141414;
+$primary-dark-accent: #e8d9b4;
+$secondary-dark-accent: #4db8ff;
+$tertiary-dark-accent: #ff4d4d;
+
+$recipe-length: 250px;
+$recipe-number-shown: 5;
+
 
 //Resets margin to 0
 @mixin reset-margin{
@@ -52,11 +63,100 @@ $secondary-green: #028A0F;
     border-radius: 5px;
     background-color: $primary-green;
     color: white;
+    border: none;
 }
 @mixin CreateBlueButton{
     margin: 15px 0;
     padding: 16px 8px;
     border-radius: 5px;
-    background-color: $primary-blue;
+    border: none;
+    background-color: $secondary-dark-accent;
     color: white;
+}
+@mixin CreatePrimaryAccentButton{
+    margin: 15px 0;
+    padding: 16px 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: $primary-dark-accent;
+    color: white;
+}
+@mixin CreateRedButton{
+    margin: 15px 0;
+    padding: 16px 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: $tertiary-dark-accent;
+    color: white;
+}
+@mixin CreateWhiteButton{
+    margin: 15px 0;
+    padding: 16px 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    color: $primary-dark-accent;
+}
+
+@mixin CreateScrollButton{
+    
+    animation-iteration-count: infinite;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    //z-index: 999;
+    span{
+        font-size: 25px;
+        border-radius: 50%;
+        background-color: $primary-dark-background;
+        padding: 20px 20px;
+
+    }
+}
+
+
+.hidden{
+    opacity: 0;
+}
+
+.animate__delay-6s{
+    animation-delay: 6s;
+}
+.animate__delay-7s{
+    animation-delay: 7s;
+}
+
+
+.delayAnimation0{
+    animation-delay: 0.5s;
+}
+.delayAnimation1{
+    animation-delay: 1s;
+}
+.delayAnimation2{
+    animation-delay: 1.5s;
+}
+.delayAnimation3{
+    animation-delay: 2s;
+}
+.delayAnimation4{
+    animation-delay: 2.5s;
+}
+.delayAnimation5{
+    animation-delay: 3s;
+}
+.delayAnimation6{
+    animation-delay: 3.5s;
+}
+.delayAnimation7{
+    animation-delay: 4s;
+}
+.delayAnimation8{
+    animation-delay: 4.5s;
+}
+.delayAnimation9{
+    animation-delay: 5s;
 }

@@ -1,6 +1,163 @@
 .ProjectDetail{
-    @include add-margin-top-page;
-    //@include display-flex-j-center;
-    //gap: if you want to add a gap
-    gap: 50px;
+    margin-top: -15px;
+
+    & .headerContainer{
+        
+        //background-size: fit;
+        //background-repeat: no-repeat;
+        //object-fit: cover;
+        //background-size: cover;
+        background-position: bottom;
+        //border: 1px solid red;
+        animation: slideAndFadeTop 2s ease-in-out;
+        
+    }
+
+    & .ingredientsContainer{
+        
+        height: 1050px;
+        margin: 0 50px;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        flex-direction: column;
+
+
+        & .RecipeTitle{
+            animation: fadeIn 3s ease-in-out;
+            @include Fancy-Font;
+            color: white;
+            font-size: 150px;
+            position: relative;
+            font-weight: bold;
+        }
+        .RecipeTitle::after{
+            content: '';
+            position: absolute;
+            width: 80%;
+            transform: scaleX(1);
+            height: 7px;
+            bottom: 0;
+            right: 0;
+            //border-radius: 10px;
+            background-color: $primary-dark-accent;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+            animation: animateUnderline 3.5s ease-in-out;
+        }
+
+
+
+
+        & ul{
+            padding: 0;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            width: 50%;
+        }
+        & .ingredients{
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap onto new lines */
+            //align-items: center;
+            gap: 15px;
+            //padding: 25px;
+                
+            & .ingredient{
+                
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                list-style: none;
+                background-color: rgba(0, 0, 0, 0.65);
+                //border-radius: 10px;
+                color: black;
+                height: 250px;
+                width: 250px;
+                & .ingredientImage{
+                    //border-radius: 10px;
+                    height: 100px;
+                    width: 100px;
+                    object-fit: cover;
+                }
+                & .ingredientText{
+                    display: flex;
+                    flex-direction: column;
+                    
+                    & .ingredientName{
+                        text-align: center;
+                        @include Fancy-Font;
+                        text-transform: uppercase;
+                        margin-top: 20px;
+                        font-size: 25px;
+                        color:$primary-dark-accent;
+                    }
+                    & .ingredientInstruction{
+                        margin: -10px;
+                        text-align: center;
+                        @include Gotham-Font;
+                        color: white;
+                        font-size: 12.5px;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    & .description {
+        background-color: $secondary-dark-background;
+        color: white;
+        padding: 50px;
+        display: grid;
+        grid-template-columns: repeat(3, 400px); /* 3 columns */
+        justify-content: center; /* Center the grid items horizontally */
+        
+        & div {
+            height: 400px;
+            width: 400px;
+            //border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            & .descriptionImg{
+                height: 400px;
+                z-index: 1;
+            }
+
+            & h1{
+                @include Fancy-Font;
+                font-size: 25px
+            }
+
+            & h2{
+                @include Gotham-Font;
+                text-align: center;
+                font-weight: 500;
+            }
+
+            & p{
+                @include Gotham-Font;
+                width: 80%;
+                text-align: center;
+            }
+
+
+        }
+
+        & .Creator{
+            gap: 10px;
+            & img{
+                height: 200px;
+                z-index: 0;
+            }
+
+        }
+        //margin-top: -115px;
+    }
+    
+
 }

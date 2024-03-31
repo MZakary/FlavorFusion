@@ -1,14 +1,17 @@
 .Contact{
+    //background-color: $secondary-dark-background;
+    padding-top: 10px;
     @include add-margin-top-page;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    animation: slideAndFadeTop 1.5s ease-in-out;
 
     & .Form{
         background-color: #1F1F1F;
-        border-radius: 0 20px 20px 0;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+        border-radius: 2px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         width: 25%;
         display: flex;
         flex-direction: column;
@@ -20,16 +23,19 @@
         & h2{
             color: white;
             & span{
-                color: $primary-blue;
+                color: $primary-dark-accent;
             }
         }
     
         & .SubmitButton{
-            @include CreateBlueButton;
+            @include CreatePrimaryAccentButton;
             width: 75%;
             font-size: 25px;
             align-self: center;
             
+        }
+        & .SubmitButton:hover{
+            @include CreateWhiteButton;
         }
 
         & .input-group-text{
@@ -47,12 +53,16 @@
                 color: white;
             }
             & .form-control:focus{
-                color: $primary-blue;
+                color: $primary-dark-accent;
                 //background-color: var(--bs-body-bg);
-                border-color: $primary-blue;
+                border-color: $primary-dark-accent;
                 outline: 0;
-                box-shadow: 0 0 0 0.25rem rgba(3, 116, 192, 0.25)
+                box-shadow: 0 0 0 0.25rem rgba(232, 217, 180, 0.25);
             }
+        }
+
+        & .input-group-text, .form-control{
+            border-radius: 2px;
         }
 
         & .Inquiry{
@@ -64,7 +74,7 @@
             width: 100%;
             & .input-group-text{
                 width: 100%;
-                border-radius: 5px 5px 0 0;
+                border-radius: 0px 0px 0 0;
                 text-align: center;
                 display: flex;
                 flex-direction: column;
@@ -72,7 +82,7 @@
             
             & .form-control{
                 height: 300px;
-                border-radius: 0 0 5px 5px;
+                border-radius: 0 0 0px 0px;
                 width: 100%;
                 resize: none;
                 background-color: #1F1F1F;
@@ -82,11 +92,11 @@
                 color: white;
             }
             & .form-control:focus{
-                color: $primary-blue;
+                color: $primary-dark-accent;
                 //background-color: var(--bs-body-bg);
-                border-color: $primary-blue;
+                border-color: $primary-dark-accent;
                 outline: 0;
-                box-shadow: 0 0 0 0.25rem rgba(3, 116, 192, 0.25)
+                box-shadow: 0 0 0 0.25rem rgba(232, 217, 180, 0.25);
             }
         }
 
@@ -99,7 +109,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 20px 0 0 20px;
+            border-radius: 2px;
         }
         border-radius: 20px 0 0 20px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */

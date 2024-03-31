@@ -1,84 +1,257 @@
-.Gallery{
+.Recipes{
     @include add-margin-top-page;
     //border: 1px solid green;
 
     & h1{
-        color: $primary-blue;
-        @include Gotham-Font;
+        color: $primary-dark-accent;
+        @include Fancy-Font;
         font-weight: bold;
         text-align: center;
         font-size: 50px;
         text-transform: uppercase;
+        animation: slideAndFadeBottom 1.5s ease-in-out;
     }
 
     .HorizontalLine{
         border-top: none;
-        border-bottom: 5px $primary-blue solid;
+        border-bottom: 5px $primary-dark-accent solid;
         width: 25%;
         margin: 15px auto;
-        
+        box-shadow: 0px 4px 6px rgba(255, 204, 0, 0.55); /* Adjust the values as needed */
         animation: slideAndFadeBottom 1s ease-in-out;
     }
 
-
-
-    & .ProjectContainer{
-        @include add-margin-top;
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        //border: 1px solid  blue;
+    & form{
+        width: 50%;
+        margin: 25px auto;
+        animation: slideAndFadeBottom 1.5s ease-in-out;
         
-        & .Project{
-            background-size: cover;
-            background-position: center;
-            //border: 1px solid red;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25); /* Adjust the values as needed */
-            
-            border-radius: 10px;
-            height: 200px;
-            width: 200px;
-            & a{
-                //border-radius: 10px;
-                //border: 2px solid transparent;
-                position: relative;
-                opacity: 0;
-                color: white;
-                height: 200px;
-                width: 200px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 3;
+        & input{
+            display: block;
+            width: 100%;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--bs-body-color);
+            appearance: none;
+            background-color: $quaternary-dark-background;
+            background-clip: padding-box;
+            border: none;
+            border-bottom: var(--bs-border-width) solid var(--bs-border-color);
+            //border-radius: var(--bs-border-radius);
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        & input:focus-visible{
+            outline: none;
+        }
+
+        & input:focus{
+            color: $tertiary-dark-accent;
+        }
+
+        & .searchBar {
+            border: 1px solid white;
+            color: white;
+        }
+    
+        & .searchBar:hover {
+            border: 1px solid $primary-blue;
+            color: $primary-blue;
+        }
+    }
+    
+    & .FiltersForGallery{
+        animation: slideAndFadeTop 1.5s ease-in-out;
+        & .filters {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            color: white;
+            transition-duration: 0.5s;
+            position: relative;
+        
+            & input[type="checkbox"] {
+                display: none;
+            }
+        
+            & input[type="checkbox"]:checked + span {
+                color: $primary-dark-accent;
                 transition-duration: 0.5s;
-                text-transform: uppercase;
-                font-weight: 500;
-
-
-
-               & p{
-                    z-index: 3;
-                    @include Gotham-Font;
-               }
             }
-            & a:hover{
-                opacity: 1;
-                //animation: borderAnimation 0.5s forwards;
-            }
-
-            & a::before{
+        
+            & input[type="checkbox"]:checked + span::after {
                 content: '';
-                position: absolute; /* Position the overlay layer relative to the container */
-                top: 0;
-                left: 0;
+                position: absolute;
                 width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5); /* Specify the overlay color with transparency */
-                border-radius: 10px; /* Match the parent's border-radius if needed */
-                z-index: 0;
-                
+                transform: scaleX(1);
+                height: 1px;
+                bottom: -5px;
+                left: 0;
+                background-color: $primary-dark-accent;
+                transform-origin: bottom center;
+                transition: transform 0.25s ease-out;
+            }
+        
+            & input[type="checkbox"] + span {
+                transition-duration: 0.5s;
+                @include Gotham-Font;
+                text-transform: uppercase;
+                position: relative;
+            }
+        
+            & input[type="checkbox"]:not(:checked) + span::after {
+                content: ''; // Added content
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 1px;
+                bottom: -5px;
+                left: 0;
+                background-color: $primary-dark-accent;
+                transform-origin: bottom center;
+                transition: transform 0.25s ease-out;
+            }
+        
+            & input[type="checkbox"]:hover + span {
+                transition-duration: 0.5s;
+                color: $primary-dark-accent;
+            }
+        
+            & label {
+                cursor: pointer;
             }
         }
+    }
+    
+
+ 
+    
+    & .ProjectContainer{
+        @include add-margin-top;
+        display: grid;
+        grid-template-columns: repeat($recipe-number-shown, $recipe-length); /* 7 items per row 200px width (same as project)*/
+        justify-content:center;
+        //align-items: start;
+        //margin: auto;
+        gap: 30px;
+        height: 100%;
+        //flex-wrap: wrap;
+        //border: 1px solid  blue;
+        animation: slideAndFadeTop 2.5s ease-in-out;
         
+        & .Project{
+
+            @include display-flex-a-center;
+            flex-direction: column;
+            gap: 10px;
+            transition-duration: 0.5s;
+            
+            border-radius: 10px;
+            height: $recipe-length;
+            width: $recipe-length;
+
+            & .ProjectImg{
+                height: 150px;
+                transition-duration: 0.5s;
+            }
+            
+            & .ProjectTitle{
+                display: inline-block;
+                color: white;
+                transition-duration: 0.5s;
+                position: relative;
+                @include Gotham-Font;
+            }
+
+
+            .ProjectTitle::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(1);
+                height: 2px;
+                bottom: -3px;
+                left: 0;
+                background-color: $primary-dark-accent;
+                transform-origin: bottom left;
+                transition: transform 0.25s ease-out;
+            }
+
+            & .ProjectDetails{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                & .ProjectDescription{
+                    color: white;
+                    font-size: 12px;
+                    margin-bottom: 0;
+                }
+    
+                & .ProjectType{
+                    color: $primary-dark-accent;
+                    font-size: 15px;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+            
+
+
+
+        }
+         
+        .Project:not(:hover) .ProjectTitle::after {
+            //width: 100%; /* Collapse the width when not hovering */
+            transform: scaleX(0);
+            transform-origin: bottom right;
+        }
+
+        & .Project:hover .ProjectImg{
+            height: 160px;
+        }
+        
+    }
+}
+
+
+.loading{
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+@media (max-width: 991px) {
+    .Recipes{
+        .ProjectContainer{
+            grid-template-columns: repeat(3, $recipe-length); /* 7 items per row 200px width (same as project)*/
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .Recipes{
+        .ProjectContainer{
+            grid-template-columns: repeat(1, $recipe-length); /* 7 items per row 200px width (same as project)*/
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .Recipes{
+
+        .FiltersForGallery{
+            .filters{
+                flex-direction: column;
+                align-items: center;
+            }   
+        }
+        .ProjectContainer{
+            animation: slideAndFadeLeft 2.5s ease-in-out;
+        }
     }
 }

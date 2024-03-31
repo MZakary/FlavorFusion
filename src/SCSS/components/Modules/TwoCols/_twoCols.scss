@@ -1,45 +1,47 @@
 .TwoCols{
-    @include add-margin-top;
     @include display-flex-j-center;
+    margin-top: 13px;
+    align-items: center;
     //gap: if you want to add a gap
-    gap: 50px;
+    //width: 60%;
+    //margin: auto;
 
-    /*Controls both cols*/
-    & .col{
-        width: 100%;
+    & .colContainer{
         display: flex;
         flex-direction: row;
-    }
-
-    /*Controls col 1*/
-    & .col1{
-        align-self: center;
-        justify-content: flex-end;
-        animation: slideAndFadeLeft 1s ease-in-out;
-        & .image{
-            height: 275px;
+        align-items: center;
+        gap: 15px;
+        
+        /*Controls both cols*/
+        & .col{
+            animation: slideAndFadeBottom 1s ease-in-out;
+            & button{
+                @include CreateBlueButton;
+                margin: auto;
+                width: 100%;
+                font-size: 20px;
+                @include Gotham-Font;
+                transition-duration: 0.5s;
+            }
+            width: 250px;
+            //border: 1px solid red;
         }
-    }
-
-    /*Controls col 2*/
-    & .col2{
-        align-self: center;
-        justify-content: flex-start;
-        animation: slideAndFadeRight 1s ease-in-out;
-
-        & .Text{
-            @include Gotham-Font;
-            font-size: 19px;
-            width: 55%;
+    
+        /*Controls col 1*/
+        & .col1:hover{
+            //width: 250px;
+            & button{
+                background-color: $tertiary-dark-accent;
+            }
         }
-    }
-
-    & .VerticalLine{
-      width: 5px; /* Adjust the width as needed */
-      height: 300px; /* Adjust the height as needed */
-      align-self: center;
-      background-color: $primary-green; /* Adjust the color as needed */
-      animation: FadeIn 2s ease-in-out;
+    
+        /*Controls col 2*/
+        & .col2:hover{
+            & button{
+                background-color: $primary-dark-accent;
+            }
+        }
+    
     }
 }
 

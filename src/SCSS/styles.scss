@@ -10,9 +10,12 @@
 @import './components/Footer/footer';
 @import './components/Modules/FeaturedItems/featuredItems';
 @import './components/Modules/Carousel/carousel';
-@import './components/About/about';
+@import './components/Main/main';
 @import './components/ProjectDetail/projectDetail';
 @import './components/Modules/AboutUs/AboutUs.scss';
+@import './components/Modules/Map/map.scss';
+@import './components/Modules/SimpleGrid/simpleGrid.scss';
+@import 'animate.css';
 
 /*Remove any underline on a*/
 a{
@@ -22,7 +25,7 @@ a{
 
 body {
   @include reset-margin;
-  background-color: #121212;
+  background-color: $quaternary-dark-background;
   
 }
 
@@ -35,3 +38,4 @@ body {
 main {
   flex-grow: 1; /* Grow to fill available space */
 }
+

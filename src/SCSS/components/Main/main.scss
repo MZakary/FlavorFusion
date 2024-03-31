@@ -1,0 +1,116 @@
+.HeaderContainer{
+    //background-color: $primary-blue;
+    //@include add-margin-top-page;
+    margin-top: -100px;
+    //@include add-padding-to-sides;
+    & .About{
+        position: relative;
+        background-image: url("/Img/testheader1.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 850px;
+
+        & .HeaderText{
+            position: relative;
+            color: white;
+            text-align: left;
+            @include Fancy-Font;
+            & h1{
+                position: absolute;
+                top: 300px;
+                left: 140px;
+                font-size: 75px;
+                font-weight: bold;
+            }
+            & h4{
+                position: absolute;
+                top: 400px;
+                left: 150px;
+                font-size: 30px;
+                width: 50%;
+            }
+            & p{
+                position: absolute;
+                top: 500px;
+                width: 25%;
+                left: 150px;
+            }
+        }
+
+        .scrollBtn {
+            @include CreateScrollButton;
+        }
+
+    }
+    
+}
+
+@media (max-width: 991px) {
+    .HeaderContainer{
+        & .About{
+            & .HeaderText{
+                & h1{
+                    left: 50px;
+                    top: 200px;
+                }
+                & h4, p{
+                    left: 60px;
+                }
+                & h4{
+                    top: 300px;
+                }
+                & p{
+                    top: 425px;
+                    width: 65%;
+                }
+            }
+            & .scrollBtn{
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .HeaderContainer{
+        & .About{
+            & .HeaderText{
+                & h4{
+                    width: 70%;
+                }
+                & p{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 674px) {
+    .HeaderContainer{
+        & .About{
+            & .HeaderText{
+                & h4{
+                    top: 400px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 375px) {
+    .HeaderContainer{
+        & .About{
+            & .HeaderText{
+                & h1{
+                    top: 190px;
+                    font-size: 45px;
+                }
+                & h4{
+                    top: 310px;
+                    left: 50px;
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}

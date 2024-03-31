@@ -2,9 +2,9 @@ import React from "react";
 
 function Footer(){
     return(
-        <section className="Footer">
+        <footer className="Footer">
             <p>Copyright © 2024 Zakary Mitrovic. All rights reserved.</p>
-        </section>
+        </footer>
     );
 }
 export default Footer;

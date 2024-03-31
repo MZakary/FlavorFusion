@@ -7,12 +7,12 @@ function Header(){
 
     return(
         <div>
-            <Nav links={[
-                { name: 'About', url: '/' },
-                { name: 'Recipes', url: '/gallery' },
-                { name: 'Quick & Easy', url: '/page5' },
-                { name: 'Holidays & Seasons', url: '/page4' },
-                { name: 'Contact', url: '/page3' },
+            <Nav logo={"/Img/Epic.jpg"} links={[
+                { name: 'About Us', url: '/about-us' },
+                { name: 'Recipes', url: '/recipes' },
+                { name: 'logo', url: '/' },
+                { name: 'Contact', url: '/contact' },
+                { name: 'Gallery', url: '/gallery' },
             ]} />
             
             {/*About is shown here*/}

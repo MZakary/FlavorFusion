@@ -1,0 +1,11 @@
+.Map{
+    //margin-top: 150px;
+    background-color: $tertiary-dark-background;
+    padding: 30px;
+    & .map-component{
+        margin: auto;
+        display: block;
+        height: 400px;
+        width: 800px;
+    }
+}

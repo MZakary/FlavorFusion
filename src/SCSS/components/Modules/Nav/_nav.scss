@@ -1,59 +1,199 @@
-
-.navbar{
-    position: fixed;
+.navbar {
+    //position: fixed;
     width: 100%;
     z-index: 400;
-    background-color: #1F1F1F;
-    box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.55); /* Adjust the values as needed */
+    //background-color: $secondary-dark-background;
+    //box-shadow: 0px 4px 6px rgba(255, 204, 0, 0.55);
     transition-duration: 0.5s;
-    .nav-link,  .navbar-text{
+    animation: slideAndFadeTop 1.5s ease-in-out;
+
+    .nav-link,
+    .navbar-text {
         //@include Gotham-Font;
         @include Fancy-Font;
         color: white;
-        
     }
-    .nav-link:hover{
-        color: $primary-blue;
+
+    .nav-link:hover {
+        color: $primary-dark-accent;
     }
-    .nav-link:focus{
-        color: $primary-blue;
+
+    .nav-link:focus {
+        color: $primary-dark-accent;
     }
-    .isActive{
-        color: $primary-blue;
+
+    .isActive {
+        color: $primary-dark-accent;
         font-weight: 500;
     }
 
-    .container-fluid{
+    .container-fluid {
         transition-duration: 0.5s;
+        justify-content: center;
+        align-items: center;
+        
     }
 
-    .logo{
+    .navbar-nav{
+        gap: 15px;
+        align-items: center;
+    }
+
+    .navbar-collapse{
+        flex-grow: 0;
+    }
+
+    .logo {
         height: 50px;
     }
 
-    .collapse{
-        transition-duration: 0.5s;
+
+    .navbar-toggler{
+        z-index: 500;
     }
 
-    & .searchBar{
-        border: 1px solid white;
-        color: white;
-    }
-    & .searchBar:hover{
-        border: 1px solid $primary-blue;
-        color: $primary-blue;
-    }
 
-    & .form-control:focus{
-        color: $primary-blue;
+    .MakeItStick{
+
+        position: fixed;
+        top: 15px;
         
+    }
+
+    .onTop {
+        transition-duration: 0.5s;
+        width: 45%;
+        & ul{
+            width: 100%;
+            transition-duration: 0.5s;
+            padding-bottom: 15px;
+            border-bottom: 1px white solid;
+            @include display-flex-j-center;
+            & li{
+                padding: 0 35px;
+                & a{
+                    font-size: 20px;
+                }
+                .homeButton{
+                    display: none;
+                }
+
+            }
+        }
+    }
+    
+    .sticky{
+        top: 0;
+        background-color: $primary-dark-background;
+        //border-radius: 10px;
+        border-radius: 0 0 10px 10px;
+        padding: 10px;
+        transition-duration: 0.5s;
+        width: 100%;
+        & ul{
+            transition-duration: 0.5s;
+            //padding-bottom: 15px;
+            //border-bottom: 1px white solid;
+            @include display-flex-j-center;
+            & li{
+                padding: 0 35px;
+                & a{
+                    font-size: 20px;
+                }
+                .homeButton{
+                    display: none;
+                }
+                
+
+            }
+        }
     }
 
 }
 
-@media (max-width: 768px){
-    .collapse{
-        transition-duration: 0.5s;
+.add-background-color{
+    background-color: $secondary-dark-background;
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        padding-top: 0;
+        //background-color: aqua;
+        & .container-fluid {
+            transition-duration: 0.5s;
+            //justify-content: center;
+            //align-items: center;
+            padding: 0;
+            justify-content: flex-start;
+        }
+        & .collapse {
+            transition-duration: 0.5s;
+        }
+        
+        .onTop, .sticky{
+            background-color: $primary-dark-background;
+            width: 40%;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            ul{
+                border-bottom: none;
+                justify-content: flex-start;
+                width: auto;
+                padding-top: 75px;
+                li{
+                    width: 100%;
+                    a{
+                        padding: 0;
+                        text-align: left;
+                        font-size: 50px;
+                    }
+
+                    .logo{
+                        display: none;
+                    }
+
+                    .homeButton{
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .navbar-toggler{
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            border-color: $primary-dark-accent;
+            
+            span{
+                color: $primary-dark-accent;
+                font-size: 35px;
+            }
+        }.navbar-toggler:focus{
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        & .MakeItStick{
+            top: 0;
+        }
+
+        
+
+
     }
+
+
     
+}
+
+@media (max-width: 768px) {
+    .navbar {
+
+        .onTop, .sticky{
+            width: 100%;
+        }
+    }
 }

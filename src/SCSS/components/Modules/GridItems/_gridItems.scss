@@ -1,66 +1,179 @@
 .GridItems {
-    @include add-margin-top;
+  padding: 20px 0;
+  
+
+  & h1{
+    color: $primary-dark-accent;
+    @include Fancy-Font;
+    text-align: center;
+    padding: 50px 0;
+    font-weight: 900;
+  }
+
+  & .Type{
+    background-position: center;
+    background-size: cover;
+    //transition-duration: 0.5s;
+    height: 250px;
+    width: 250px;
+    //border: 1px solid red;
+    
+    //position: relative;
+    
+    & a{
+      position: relative;
+      opacity: 0;
+      color: white;
+      height: 250px;
+      width: 250px;
+      border-radius: 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 3;
+      transition-duration: 0.3s;
+      text-transform: uppercase;
+      font-weight: 500;
+      
+      
+      & p{
+        display: inline-block;
+        color: white;
+        position: relative;
+        z-index: 3;
+        font-size: 25px;
+        
+      }
+
+      & p::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(1);
+        height: 2px;
+        bottom: -3px;
+        left: 0;
+        background-color: $primary-dark-accent;
+        transform-origin: bottom center;
+        transition: transform 1s ease-out;
+      }
+    }
+    a:not(:hover) p::after {
+      //width: 100%; /* Collapse the width when not hovering */
+      transform: scaleX(0);
+      transform-origin: bottom center;
+    }
+
+    & a:hover{
+      opacity: 1;
+      
+    }
+
+    & a::before{
+      content: '';
+      position: absolute; /* Position the overlay layer relative to the container */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Specify the overlay color with transparency */
+      z-index: 0;
+    }
+  }
+
+  .MobileVersion{
+    display: none;
+  }
+
+
+  .slick-slider {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: 15px;
-    
-    & .ItemContainer{
-        @include display-flex-j-center;
-        gap: 15px;
-        & .ParentDiv {
-          position: relative; /* Ensure the container is a positioned element */
-          height: 150px;
-          width: 150px;
-          padding: 10px;
-          //background-image: url('../../../../../public/Img/monkey.jpg');
-          background-size: cover;
-          background-position: center;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          border-radius: 10px;
-          animation: slideAndFadeLeft 2s ease-in-out;
-      
-          &  .Items {
-              width: 100px;
-              height: 75px;
-              object-fit: fit;
-              z-index: 2;
-            }
-        
-          & .ItemNames {
-              color: white;
-              z-index: 2;
-              margin-top: 10px;
-              @include Gotham-Font;
-              text-transform: capitalize;
-              text-align: center;
-            }
-        
-            &::before {
-              content: '';
-              position: absolute; /* Position the overlay layer relative to the container */
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              background: rgba(0, 128, 0, 0.5); /* Specify the overlay color with transparency */
-              border-radius: 10px; /* Match the parent's border-radius if needed */
-              z-index: 1; /* Ensure the overlay is above the background image (if needed) */
-            }
-        }
-    }
   }
-  
+  .slick-list {
+    position: relative;
+    overflow: hidden;
+  }
+  .slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+  }
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+}
 
-  @media (max-width: 768px){
-    .GridItems {
-      & .ItemContainer{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Creates 2 equal-width columns */
+
+@media (max-width: 991px) {
+  .GridItems{
+
+    .slick-slider{
+      display: none;
+    }
+
+    .MobileVersion{
+      display: grid;
+      grid-template-columns: repeat(4, 150px);
+      gap: 20px;
+      place-items: center;
+      padding: 0 10px;
+      justify-content: center;
+      
+    }
+
+    & .Type{
+      height: 150px;
+      width: 150px;
+
+      & a{
+        opacity: 1;
+        width: 150px;
+        height: 150px;
+        //justify-content: end;
+        position: relative;
+
+        
+      }
+
+      a:not(:hover) p::after {
+        //width: 100%; /* Collapse the width when not hovering */
+        transform: scaleX(1);
+      }
+
+      a::before{
+        opacity: 1;
       }
     }
+    
   }
+}
+
+@media (max-width: 768px) {
+  .GridItems{
+    .slick-slider{
+      display: none;
+    }
+    .MobileVersion{
+      display: grid;
+      grid-template-columns: repeat(3, 150px);
+      gap: 20px;
+      place-items: center;
+      padding: 0 10px;
+      justify-content: center;
+      
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .GridItems{
+    .MobileVersion{
+      grid-template-columns: repeat(1, 150px);
+    }
+  }
+}

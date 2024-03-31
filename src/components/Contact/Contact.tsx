@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Map from '../Modules/Map/Map'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -39,6 +40,10 @@ function Contact() {
 
   return (
     <div className="contact-page">
+
+
+
+
       <section className="Contact">
         <div className="Image">
           <img src="/Img/Epic.jpg" alt="" />

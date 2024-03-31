@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useLoaderData } from "react-router-dom";
 import Slider from 'react-slick';
+import { getGallery, getRecipe } from "../../API/FetchGallery";
+import "slick-carousel/slick/slick-theme.css";
 
 interface CarouselItem {
   image: string;
@@ -7,45 +10,34 @@ interface CarouselItem {
   url: string;
 }
 
+interface Recipe {
+  title: string;
+  thumb: string;
+  headerImg: string;
+  id: string;
+}
 
 
-function Carousel({items, title}) {
-    if (!Array.isArray(items) || items.length <= 0) {
+function CarouselTemplate({title, items}) {
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Assuming your data is already sorted by date in descending order
+        setRecipes(items.slice(-5)); // Get the last 5 items
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, [items]); // Only 'items' should be included in the dependency array
+
+
+
+    if (!Array.isArray(recipes) || recipes.length <= 0) {
         return null;
       }
-    
-      const GalleryPrevArrow = ({ currentSlide, slideCount, ...props }) => {
-        const { className, onClick } = props;
-    
-        return (
-          <div {...props} className="custom-prevArrow" onClick={onClick}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-            </svg>
-          </div>
-        );
-      };
-      const GalleryNextArrow = ({ currentSlide, slideCount, ...props }) => {
-        const { className, onClick } = props;
-    
-        return (
-          <div {...props} className="custom-nextArrow" onClick={onClick}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />
-            </svg>
-          </div>
-        );
-      };
     
       const settings = {
         className: 'center',
@@ -55,25 +47,28 @@ function Carousel({items, title}) {
         centerPadding: '100px',
         slidesToShow: 3,
         speed: 500,
-        nextArrow: <GalleryNextArrow currentSlide={undefined} slideCount={items.length}/>,
-        prevArrow: <GalleryPrevArrow currentSlide={undefined} slideCount={items.length}/>
+        dots:true,   
+        //autoplay: true,
+        
       };
     
       return (
-        <>
+        <section className='carousel-section' id='latestRecipes'>
             <h1 className='SliderTitle'>{title}</h1>
             <Slider {...settings}>
-              {items.map((slide, index) => {
+              {recipes.reverse().map((recipe: Recipe) => {
                   return (
-                  <div key={index}>
-                      <img src={slide.image} alt="slider" key={index} className="image" />
-                      <span className='sliderText'>{slide.name}</span>
+                  <div key={recipe.id}>
+                      <Link to={`/gallery/${recipe.id}`} >
+                        <img src={recipe.headerImg} alt="slider" key={recipe.id} className="image" />
+                      </Link>
+                      <span className='sliderText'>{recipe.title}</span>
                   </div>
                   );
               })}
             </Slider>
-        </>
+        </section>
       );
 };
 
-export default Carousel;
+export default CarouselTemplate;

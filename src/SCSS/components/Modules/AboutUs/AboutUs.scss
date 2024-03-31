@@ -1,81 +1,191 @@
 /* Modern About Section */
-.about-section {
-    @include add-margin-top;
+.about-header-section {
+  margin-top: -15px;
+  background-color: $tertiary-dark-background;
+  position: relative;
+  display: block;
+
+  & .headerContainer{
+    background-image: url("/Img/testheader2.png");
+    height: 630px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+  }
+  & .valuesContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    gap: 20px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    margin: -180px 0;
+    min-height: 350px;
+    //position: relative;
+    & .value{
+      animation-duration: 1s;
+      padding: 25px;
+      background-color: $primary-dark-accent;
+      width: 250px;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      & span{
+        font-size: 70px;
+        background-color: white;
+        border-radius: 50%;
+        padding: 5px;
+      }
+
+      & h2{
+        @include Fancy-Font;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 900;
+        padding-bottom: 10px;
+      }
+
+      & p{
+        @include Gotham-Font;
+        font-size: 15px;
+        text-align: center;
+      }
+    }
+    
   }
 
-  .about-image{
+  & .textSection{
+    margin-top:255px;
+    padding-bottom: 60px;
+    & .textContainer{
+      height: 700px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      
+      & .left{
+        //animation-duration: 2s;
+        padding: 30px;
+        background-color: white;
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+        border-radius: 2px 0 0 2px;
+        
+        & h2{
+          @include Gotham-Font;
+          font-weight: bold;
+          font-size: 50px;
+          text-align: center;
+          margin-bottom: 25px;
+        }
+        
+        & .reasons{
+          //animation-delay: 2s;
+          margin-top: 0px;
+          @include Fancy-Font;
+          display: flex;
+          flex-direction: row;
+          gap: 35px;
+          font-size: 25px;
+          align-items: start;
+          justify-content: flex-start;
+          font-weight: bold;
+          & span{
+            font-size: 50px;
+          }
+        }
+
+
+
+      }
+      & .right{
+        & img{
+          border-radius: 0 2px 2px 0;
+          height: 700px;
+          width: 400px;
+          object-fit: cover;
+          object-position: left;
+        }
+      }
+    }
+  }
+
+  & .missionSection{
+    background-color: $primary-dark-accent;
+    padding: 125px;
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 25px;
+
+    & h1{
+      @include Gotham-Font;
+      font-weight: 900;
+    }
+
+    & p{
+      line-height: 2.5;
+    }
   }
-  
-  .about-image img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .about-content {
-    padding-left: 40px;
-  }
-  
-  .about-heading {
-    font-size: 36px;
+
+  & .employeesSection{
+    padding: 120px 0;
     color: white;
-    margin-bottom: 30px;
-    @include Fancy-Font;
-    font-weight: bolder;
-  }
-  
-  .about-description {
-    font-size: 18px;
-    line-height: 1.6;
-    color: lightgray;
-    margin-bottom: 20px;
-    @include Gotham-Font;
-  }
-  
-  @media (max-width: 768px) {
-    .about-content {
-      padding-left: 0;
-      margin-top: 40px;
+    & h1{
+      text-align: center;
+      color: $primary-dark-accent;
+      @include Fancy-Font;
+      margin-bottom: 20px;
+    }
+    & .employeeContainer{
+      display: grid;
+      grid-template-columns: repeat(2, 600px);
+      gap: 100px;
+      justify-content: center;
+      & .employee{
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        & img{
+          height: 275px;
+          width: 275px;
+          border-radius: 50%;
+          border: 10px solid $primary-dark-accent;
+          object-fit: cover;
+        }
+        & .employeeTextSection{
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 5px;
+          width: 60%;
+        }
+      }
     }
   }
-  
-  /* Animation Classes */
-.animate__animated {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-  }
-  
-  .animate__fadeInLeft {
-    animation-name: fadeInLeft;
-  }
-  
-  .animate__fadeInRight {
-    animation-name: fadeInRight;
-  }
-  
-  /* Keyframes */
-  @keyframes fadeInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes fadeInRight {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
+
+
+}
+
+
+.delayAnims{
+  animation-delay: 0.5s;
+}
+.delayAnims2{
+  animation-delay: 1s;
+}
+.delayAnims3{
+  animation-delay: 1.5s;
+}
+.delayAnims4{
+  animation-delay: 2.5s;
+}
+

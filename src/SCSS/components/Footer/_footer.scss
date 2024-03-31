@@ -1,6 +1,6 @@
 .Footer{
-    @include add-margin-top;
-    background-color: #1F1F1F;
+    //@include add-margin-top;
+    background-color: $primary-dark-background;
     display: flex;
     flex-direction: column;
     align-items: center;
