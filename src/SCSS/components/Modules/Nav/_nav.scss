@@ -70,8 +70,11 @@
             border-bottom: 1px white solid;
             @include display-flex-j-center;
             & li{
-                padding: 0 35px;
+                transition-duration: 0.5s;
+                padding: 0 15px;
+                
                 & a{
+                    
                     font-size: 20px;
                 }
                 .homeButton{
@@ -96,7 +99,9 @@
             //border-bottom: 1px white solid;
             @include display-flex-j-center;
             & li{
+                transition-duration: 0.5s;
                 padding: 0 35px;
+                
                 & a{
                     font-size: 20px;
                 }
