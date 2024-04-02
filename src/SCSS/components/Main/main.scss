@@ -101,14 +101,16 @@
     .HeaderContainer{
         & .About{
             & .HeaderText{
+                
                 & h1{
-                    top: 190px;
-                    font-size: 45px;
+                    left: 0;
+                    font-size: 50px;
+                    text-align: center;
                 }
                 & h4{
-                    top: 310px;
-                    left: 50px;
-                    font-size: 30px;
+                    top: 350px;
+                    font-size: 25px;
+                    text-align: center;
                 }
             }
         }

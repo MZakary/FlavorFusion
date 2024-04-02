@@ -145,3 +145,33 @@
         }
     }
 }
+
+
+@media (max-width: 500px){
+    .SimpleGrid{
+        & .GridLayout{
+            & .even, .odd{
+                flex-direction: column;
+                
+            }
+
+            & .itemImg{
+                //display: block;
+                width: 100%;
+                height: 900px;
+                object-fit: contain;
+                object-position: center;
+            }
+
+            & .Reviews{
+                & .ReviewContainer{
+                    display: flex;
+                    gap: 20px;
+                    // & .Review{
+
+                    // }
+                }
+            }
+        }
+    }
+}
