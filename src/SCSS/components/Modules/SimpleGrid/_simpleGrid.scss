@@ -132,46 +132,93 @@
 @media (max-width: 991px){
     .SimpleGrid{
         & .GridLayout{
-            & .even, .odd{
-                flex-direction: column;
-            }
-
+            // & .even, .odd{
+            //     flex-direction: row;
+            // }
+            width: 100%;
             & .Reviews{
+                padding: 0 30px;
                 & .ReviewContainer{
                     display: flex;
                     gap: 20px;
+                    flex-direction: column;
+                    & .Review{
+                        font-size: 12.5px;
+                    }
                 }
             }
         }
     }
 }
 
+@media (max-width: 768px){
+    .SimpleGrid{
+        & .GridLayout{
+            & .even, .odd{
+                height: 800px;
+                
+            }
+
+            & .itemImg{
+                width: 60%;
+            }
+
+            & .Reviews{
+                & .ReviewContainer{
+                    & .Review{
+                        width: 100%;
+                        height: 50%;
+
+                    }
+                }
+            }
+        }
+    }
+}
 
 @media (max-width: 500px){
     .SimpleGrid{
         & .GridLayout{
             & .even, .odd{
                 flex-direction: column;
+                align-items: center;
                 
-            }
 
-            & .itemImg{
-                //display: block;
-                width: 100%;
-                height: 900px;
-                object-fit: contain;
-                object-position: center;
-            }
 
-            & .Reviews{
-                & .ReviewContainer{
-                    display: flex;
-                    gap: 20px;
-                    // & .Review{
 
-                    // }
+                & .ReviewsTitle{
+                    display: none;
+                }
+
+                & .title{
+                    line-height: 0;
+                }
+
+                & .title::after{
+                    content: ''; /* Required for pseudo-elements */
+                    display: block; /* Makes the pseudo-element a block-level element */
+                    width: 80%; /* Adjust the width of the underline as needed */
+                    height: 3px; /* Adjust the thickness of the underline */
+                    border-radius: 2px;
+                    background-color: $primary-dark-accent; /* Set the color of the underline */
+                    margin: 30px auto 0; /* Center the underline horizontally */
+                    
+                }
+    
+                & .Reviews{
+                    width: 100%;
+                    padding: 5px;
+                    & .ReviewContainer{
+                        flex-direction: row;
+                        gap: 5px;
+                        & .Review{
+                            width: 50%;
+                            height: 85%;
+                        }
+                    }
                 }
             }
+
         }
     }
 }

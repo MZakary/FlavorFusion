@@ -116,7 +116,7 @@ function SimpleGrid({ Title, Items }) {
                         <div className={`item${i} animate__animated ${ toBool('canAnimate'+i) ? (isEvenOrOdd(i) ? "animate__fadeInLeft" : "animate__fadeInRight") : 'hidden'} ` + (isEvenOrOdd(i) ? "even" : "odd")} style={{ backgroundImage: `url(${(isEvenOrOdd(i) ? "/Img/testbackground.png" : "/Img/testbackground.png")})` }} key={i}>
                             <img className={`itemImg animate__animated animate__delay-1s ${ toBool('canAnimate'+i) ? (isEvenOrOdd(i) ? "animate__fadeInLeftBig" : "animate__fadeInRightBig") : 'hidden'}  `} src={item.thumb} alt={item.title} />
                             <div className={`Reviews animate__animated animate__delay-1s ${ toBool('canAnimate'+i) ? (isEvenOrOdd(i) ? "animate__fadeInRight" : "animate__fadeInLeft") : 'hidden'}`}>
-                                <h1>Reviews</h1>
+                                <h1 className="ReviewsTitle">Reviews</h1>
                                 <h2 className="title">{item.title}</h2>
                                 <div className="ReviewContainer">
                                     {getHighestReviews(item.reviews).map((review, j) => (

@@ -75,7 +75,13 @@
     .HeaderContainer{
         & .About{
             & .HeaderText{
+                & h1{
+                    position: relative;
+                    width: 70%;
+                }
                 & h4{
+                    position: relative;
+                    top: 200px;
                     width: 70%;
                 }
                 & p{
@@ -86,31 +92,20 @@
     }
 }
 
-@media (max-width: 674px) {
-    .HeaderContainer{
-        & .About{
-            & .HeaderText{
-                & h4{
-                    top: 400px;
-                }
-            }
-        }
-    }
-}
 @media (max-width: 500px) {
     .HeaderContainer{
         & .About{
             & .HeaderText{
                 
                 & h1{
-                    left: 0;
-                    font-size: 50px;
-                    text-align: center;
+                    
+                    font-size: 55px;
+                    width: 80%;
                 }
                 & h4{
-                    top: 350px;
-                    font-size: 25px;
-                    text-align: center;
+                    // top: 350px;
+                    font-size: 30px;
+                    
                 }
             }
         }

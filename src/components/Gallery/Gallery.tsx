@@ -112,6 +112,7 @@ function Gallery({ title, itemsGiven, searchBar }: { title: string, itemsGiven: 
                 <div className="ProjectContainer">
                     {displayRecipes.map((recipe: Recipe) => (
                         <>
+                        {/* Redo this code wtf is this */}
                             {isGallery ? (<>
                                     <Link to={`/recipes/${recipe.id}`} className="Project" key={recipe.id}>
                                         <img className="ProjectImg" src={recipe.thumb} alt="" />

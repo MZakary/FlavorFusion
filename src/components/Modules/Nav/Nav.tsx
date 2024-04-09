@@ -66,7 +66,7 @@ function Nav({ links, logo }) {
     // Define the isDesktopOrTablet function outside the component
     function isDesktopOrTablet() {
         const screenWidth = window.innerWidth;
-        const tabletWidth = 990;
+        const tabletWidth = 991; //Affects menu opening for some reason
         return screenWidth >= tabletWidth;
     }
 
@@ -76,8 +76,7 @@ function Nav({ links, logo }) {
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" onClick={() => setIsOpen(!isOpen)}>
                     <span className="material-icons">menu</span>
                 </button>
-                {/* <a className="navbar-brand" href="/"><img className="logo" src={logo} alt="" /></a> */}
-                {/* slideout left is an issue to fix */}
+                
                 <div className={"MakeItStick animate__animated " + (isOpen ? `show ${isDesktop ? ' ' : ' animate__slideInLeft'} `  : " animate__slideOutLeft  ") + (scrollPosition > 0 ? 'sticky' : 'onTop')} id="navbarText">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         {links.map((lien, i) => (
@@ -101,4 +100,5 @@ function Nav({ links, logo }) {
         </nav>
     );
 }
+
 export default Nav;
