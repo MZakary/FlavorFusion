@@ -46,7 +46,7 @@ function Contact() {
 
       <section className="Contact">
         <div className="Image">
-          <img src="/Img/Epic.jpg" alt="" />
+          <img src="/Img/contact.png" alt="" />
         </div>
         <div className="Form">
           <h2>Contact Us <span>Today</span>!</h2>

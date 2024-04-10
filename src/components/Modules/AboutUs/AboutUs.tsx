@@ -145,7 +145,7 @@ function AboutUs(){
                             </div>
                         </div>
                         <div className='right animate__animated animate__rotateInDownRight'>
-                            <img src="/Img/Epic.jpg" alt="" />
+                            <img src="/Img/aboutusimg1.png" alt="" />
                         </div>
                     </div>
                 </div>
@@ -157,14 +157,14 @@ function AboutUs(){
                     <h1 className={`animate__animated ${employeesSectionVisible ? 'animate__fadeIn' : 'hidden'}`}>Our staff</h1>
                     <div className='employeeContainer'>
                         <div className='employee'>
-                            <img className={`animate__animated ${employeesSectionVisible ? 'animate__fadeInLeftBig' : 'hidden'}`} src='/Img/Bobby.png' alt="" />
+                            <img className={`animate__animated ${employeesSectionVisible ? 'animate__fadeInLeftBig' : 'hidden'}`} src='/Img/Samantha Reed.png' alt="" />
                             <div className='employeeTextSection'>
                                 <h2 className={`animate__animated animate__delay-1s ${employeesSectionVisible ? 'animate__fadeInDown' : 'hidden'}`}>Samantha Reed - Chief Mixologist</h2>
                                 <p className={`animate__animated animate__delay-1s ${employeesSectionVisible ? 'animate__fadeInDown' : 'hidden'}`}>Samantha oversees recipe development and quality control.</p>
                             </div>
                         </div>
                         <div className='employee'>
-                            <img className={`animate__animated ${employeesSectionVisible ? 'animate__fadeInDownBig' : 'hidden'}`} src='/Img/Bobby.png' alt="" />
+                            <img className={`animate__animated ${employeesSectionVisible ? 'animate__fadeInDownBig' : 'hidden'}`} src='/Img/Michael Nguyen.png' alt="" />
                             <div className='employeeTextSection'>
                                 <h2 className={`animate__animated animate__delay-1s ${employeesSectionVisible ? 'animate__fadeInRight' : 'hidden'}`}>Michael Nguyen - Community Manager</h2>
                                 <p className={`animate__animated animate__delay-1s ${employeesSectionVisible ? 'animate__fadeInRight' : 'hidden'}`}>Michael fosters engagement and organizes events for the online community.</p>
@@ -175,14 +175,14 @@ function AboutUs(){
                                 <h2 className={`animate__animated animate__delay-1s ${employeesSectionVisible ? 'animate__fadeInLeft' : 'hidden'}`}>Emily Carter - Content Creator</h2>
                                 <p className={`animate__animated animate__delay-1s ${employeesSectionVisible ? 'animate__fadeInLeft' : 'hidden'}`} >Emily creates captivating content for various platforms.</p>
                             </div>
-                            <img className={`animate__animated  ${employeesSectionVisible ? 'animate__fadeInUpBig' : 'hidden'}`} src='/Img/Bobby.png' alt="" />
+                            <img className={`animate__animated  ${employeesSectionVisible ? 'animate__fadeInUpBig' : 'hidden'}`} src='/Img/Emily Carter.png' alt="" />
                         </div>
                         <div className='employee'>
                             <div className='employeeTextSection'>
                                 <h2 className={`animate__animated animate__delay-1s ${employeesSectionVisible ? 'animate__fadeInUp' : 'hidden'}`}>Daniel Martinez - Operations Coordinator</h2>
                                 <p className={`animate__animated animate__delay-1s ${employeesSectionVisible ? 'animate__fadeInUp' : 'hidden'}`}>Daniel handles logistics and ensures smooth operations.</p>
                             </div>
-                            <img className={`animate__animated  ${employeesSectionVisible ? 'animate__fadeInRightBig' : 'hidden'}`} src='/Img/Bobby.png' alt="" />
+                            <img className={`animate__animated  ${employeesSectionVisible ? 'animate__fadeInRightBig' : 'hidden'}`} src='/Img/Daniel Martinez.png' alt="" />
                         </div>
                     </div>
                 </div>
