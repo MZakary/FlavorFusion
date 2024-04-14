@@ -63,7 +63,7 @@ function GridItems({ Title, Items }) {
                     <Slider {...settings}>
                         {uniqueAlcohols.map((alcohol, i) => (
                             <>
-                                <div className="Type" style={{ backgroundImage: `url(${alcohol.imageUrl})` }} key={i}>
+                                <div className="Type" style={{ backgroundImage: `url(/Img/Types/${alcohol.type}.png)` }} key={i}>
                                     <Link to={`/recipes?type=${encodeURIComponent(alcohol.type)}`}><p>{alcohol.type}</p></Link>
                                 </div>
                             </>
@@ -73,7 +73,7 @@ function GridItems({ Title, Items }) {
                     <div className="MobileVersion">
                         {uniqueAlcohols.map((alcohol, i) => (
                             <>
-                                <div className="Type" style={{ backgroundImage: `url(${alcohol.imageUrl})` }} key={i}>
+                                <div className="Type" style={{ backgroundImage: `url(/Img/Types/${alcohol.type}.png)` }} key={i}>
                                     <Link to={`/recipes?type=${encodeURIComponent(alcohol.type)}`}><p>{alcohol.type}</p></Link>
                                 </div>
                             </>
