@@ -85,7 +85,9 @@ function AboutUs(){
         <>
             <section className="about-header-section" id='AboutUs'>
 
-                <div className='headerContainer animate__animated animate__fadeInDown'><h1 className='mobileTitle'>About Us</h1></div>
+                <div className='headerContainer animate__animated animate__fadeInDown'>
+                    <h1 className='mobileTitle'>About Us</h1>
+                </div>
                 
                 <div className='valuesContainer'>
                     <div className='value animate__animated animate__zoomInUp'>
