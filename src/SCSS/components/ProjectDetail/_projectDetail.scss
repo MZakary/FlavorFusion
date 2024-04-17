@@ -161,3 +161,177 @@
     
 
 }
+
+
+
+@media (max-width: 991px) {
+    .ProjectDetail{
+        margin-top: -15px;
+        
+
+    
+        & .headerContainer{
+            //background-size: fit;
+            //background-repeat: no-repeat;
+            //object-fit: cover;
+            background-size: cover;
+            background-position: bottom;
+            //border: 1px solid red;
+            animation: slideAndFadeTop 2s ease-in-out;
+            
+        }
+    
+        & .ingredientsContainer{
+            
+            height: 800px;
+            margin: 0 0;
+            padding: 50px;
+            
+
+            & .RecipeTitle{
+                font-size: 60px;
+            }
+
+        
+            & .ingredients{
+                display: grid;
+                grid-template-columns: repeat(2, 200px);
+                gap: 10px;
+                    
+                & .ingredient{
+                    height: 200px;
+                    width: 200px;
+                    & .ingredientImage{
+                        height: 100px;
+                        width: 100px;
+                    }
+                    & .ingredientText{
+                        
+                        & .ingredientName{
+                            font-size: 20px;
+                        }
+                        & .ingredientInstruction{
+                            font-size: 12.5px;
+                        }
+                    }
+                }
+            }
+            
+        }
+    
+        & .description {
+            grid-template-columns: repeat(3, 300px); /* 3 columns */
+            
+            & div {
+                height: 300px;
+                width: 300px;
+                & .descriptionImg{
+                    height: 300px;
+                }
+    
+                & h1{
+                    font-size: 20px
+                }
+    
+                & h2{
+                    font-size: 17.5px
+                }
+    
+                & p{
+                    font-size: 12.5px;
+                }
+    
+    
+            }
+    
+            & .Creator{
+                gap: 10px;
+                & img{
+                    height: 150px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .ProjectDetail{
+    
+        & .description {
+            grid-template-columns: repeat(3, 250px); /* 3 columns */
+            
+            & div {
+                height: 250px;
+                width: 250px;
+                gap: 5px;
+                & .descriptionImg{
+                    height: 250px;
+                }
+    
+                & h1{
+                    font-size: 20px
+                }
+    
+                & h2{
+                    font-size: 15px
+                }
+    
+                & p{
+                    font-size: 12.5px;
+                }
+    
+    
+            }
+    
+            & .Creator{
+                gap: 10px;
+                & img{
+                    height: 150px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .ProjectDetail{
+        
+        & .description {
+            grid-template-columns: repeat(1, 100%); /* 3 columns */
+            padding: 0;
+            & div {
+                height: 100%;
+                width: 100%;
+                gap: 5px;
+                & .descriptionImg{
+                    height: 100%;
+                }
+    
+                & h1{
+                    padding-top: 25px;
+                    font-size: 50px
+                }
+    
+                & h2{
+                    font-size: 20px
+                }
+    
+                & p{
+                    font-size: 15px;
+                    padding-bottom: 25px;
+                }
+    
+    
+            }
+    
+            & .Creator{
+                gap: 10px;
+                padding-top: 25px;
+                & img{
+                    height: 250px;
+                }
+            }
+        }
+    }
+}

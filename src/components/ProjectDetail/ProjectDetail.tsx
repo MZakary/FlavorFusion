@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getRecipeDetail } from '../API/FetchGallery';
 import TwoCols from '../Modules/Cols/TwoCols';
+import { Circles } from 'react-loader-spinner';
 
 interface Recipe {
   title: string;
@@ -86,7 +87,7 @@ function ProjectDetail() {
 }, []);
 
   if (!recipe) {
-    return <div className='Loading'>Loading...</div>;
+    return <Circles height="80" width="80" color="#e8d9b4" ariaLabel="circles-loading" wrapperStyle={{}} wrapperClass="loading" visible={true} />;
   }
 
   console.log(recipe);
