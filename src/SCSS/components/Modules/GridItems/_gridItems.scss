@@ -12,7 +12,8 @@
 
   & .Type{
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     //transition-duration: 0.5s;
     height: 250px;
     width: 250px;
