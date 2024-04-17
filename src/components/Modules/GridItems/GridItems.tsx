@@ -57,7 +57,10 @@ function GridItems({ Title, Items }) {
         <section className="GridItems">
             <h1>{Title}</h1>
             {itemsGiven.length === 0 ? (
-                <Circles height="80" width="80" color="#e8d9b4" ariaLabel="circles-loading" wrapperStyle={{}} wrapperClass="loading" visible={true} />
+                <>
+                    <Circles height="80" width="80" color="#e8d9b4" ariaLabel="circles-loading" wrapperStyle={{}} wrapperClass="loading" visible={true} />
+                    <p className="loadingmessage">Please wait for 30 seconds for the database to load. That's what happens when you use a free Render account... :)</p>
+                </>
             ) : (
                 <>
                     <Slider {...settings}>
