@@ -14,6 +14,7 @@ interface Recipe {
   title: string;
   thumb: string;
   headerImg: string;
+  latestRecipe: string;
   id: string;
 }
 
@@ -60,7 +61,7 @@ function CarouselTemplate({title, items}) {
                   return (
                   <div key={recipe.id}>
                       <Link to={`/gallery/${recipe.id}`} >
-                        <img src={recipe.headerImg} alt="slider" key={recipe.id} className="image" />
+                        <img src={recipe.latestRecipe} alt="slider" key={recipe.id} className="image" />
                       </Link>
                       <span className='sliderText'>{recipe.title}</span>
                   </div>
