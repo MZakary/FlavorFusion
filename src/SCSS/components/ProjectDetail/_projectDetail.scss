@@ -351,12 +351,23 @@
     .ProjectDetail{
         
         & .ingredientsContainer{
-            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            .RecipeTitle::after{
+                left: 0;
+                right: 0;
+                margin: auto;
+                
+                transform-origin: bottom center;
+            }
 
             & .ingredients{
                 display: grid;
                 grid-template-columns: repeat(2, 150px);
                 gap: 10px;
+                justify-content: center;
                     
                 & .ingredient{
                     height: 150px;
