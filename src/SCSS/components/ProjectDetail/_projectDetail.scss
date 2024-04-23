@@ -296,6 +296,12 @@
 
 @media (max-width: 500px) {
     .ProjectDetail{
+
+        
+        & .ingredientsContainer{
+            
+            padding: 10px;
+        }
         
         & .description {
             grid-template-columns: repeat(1, 100%); /* 3 columns */
