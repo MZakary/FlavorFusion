@@ -301,6 +301,82 @@
         & .ingredientsContainer{
             
             padding: 10px;
+
+            & .RecipeTitle{
+                font-size: 50px;
+            }
+        }
+        
+        & .description {
+            grid-template-columns: repeat(1, 100%); /* 3 columns */
+            padding: 0;
+            & div {
+                height: 100%;
+                width: 100%;
+                gap: 5px;
+                & .descriptionImg{
+                    height: 100%;
+                    width: 100%;
+                }
+    
+                & h1{
+                    padding-top: 25px;
+                    font-size: 50px
+                }
+    
+                & h2{
+                    font-size: 20px
+                }
+    
+                & p{
+                    font-size: 15px;
+                    padding-bottom: 25px;
+                }
+    
+    
+            }
+    
+            & .Creator{
+                gap: 10px;
+                padding-top: 25px;
+                & img{
+                    height: 250px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .ProjectDetail{
+        
+        & .ingredientsContainer{
+            padding: 10px;
+
+            & .ingredients{
+                display: grid;
+                grid-template-columns: repeat(2, 150px);
+                gap: 10px;
+                    
+                & .ingredient{
+                    height: 150px;
+                    width: 150px;
+                    & .ingredientImage{
+                        height: 50px;
+                        width: 50px;
+                    }
+                    & .ingredientText{
+                        
+                        & .ingredientName{
+                            font-size: 15px;
+                        }
+                        & .ingredientInstruction{
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+
         }
         
         & .description {
