@@ -355,6 +355,10 @@
             align-items: center;
             width: 100%;
 
+            .RecipeTitle{
+                font-size: 50px;
+            }
+
             .RecipeTitle::after{
                 left: 0;
                 right: 0;
