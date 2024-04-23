@@ -241,13 +241,14 @@
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 500px) {
     .Recipes{
 
         .FiltersForGallery{
             .filters{
                 flex-direction: column;
                 align-items: center;
+                color:white;
             }   
         }
         .ProjectContainer{

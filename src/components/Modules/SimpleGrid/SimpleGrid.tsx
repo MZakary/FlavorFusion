@@ -123,7 +123,7 @@ function SimpleGrid({ Title, Items }) {
                                         <div className={`Review animate__animated delayAnimation${j+2} ${ toBool('canAnimate'+i) ? (isEvenOrOdd(i) ? "animate__fadeInRightBig" : "animate__fadeInLeftBig") : 'hidden'}`} key={j}>
                                             {/* Display star rating instead of score */}
                                             <div className="stars">{generateStars(review.score)}</div>
-                                            <p>"{review.message}"</p>
+                                            <p className="reviewmessage">"{review.message}"</p>
                                             <p className="reviewer">- {review.name}</p>
                                         </div>
                                     ))}
