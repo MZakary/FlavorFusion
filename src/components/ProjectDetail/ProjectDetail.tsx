@@ -87,7 +87,9 @@ function ProjectDetail() {
 }, []);
 
   if (!recipe) {
-    return <Circles height="80" width="80" color="#e8d9b4" ariaLabel="circles-loading" wrapperStyle={{}} wrapperClass="loading" visible={true} />;
+    return <section className='ProjetDetailVide'>
+      <Circles height="80" width="80" color="#e8d9b4" ariaLabel="circles-loading" wrapperStyle={{}} wrapperClass="loading" visible={true} />;
+    </section>
   }
 
   console.log(recipe);
