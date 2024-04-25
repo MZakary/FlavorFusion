@@ -107,9 +107,9 @@ function Gallery({ title, itemsGiven, searchBar }: { title: string, itemsGiven: 
                 </div>
             </div>
             {displayRecipes.length === 0 ? (
-                <>
+                <div>
                     <Circles height="80" width="80" color="#e8d9b4" ariaLabel="circles-loading" wrapperStyle={{}} wrapperClass="loading" visible={true} />
-                </>
+                </div>
             ) : (
                 <div className="ProjectContainer">
                     {displayRecipes.map((recipe: Recipe) => (
