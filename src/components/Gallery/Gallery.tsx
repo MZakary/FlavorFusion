@@ -106,7 +106,7 @@ function Gallery({ title, itemsGiven, searchBar }: { title: string, itemsGiven: 
                     ))}
                 </div>
             </div>
-            {itemsGiven.length === 0 ? (
+            {itemsGiven.length === 0 || itemsGiven === null ? (
                 <div>
                     <Circles height="80" width="80" color="#e8d9b4" ariaLabel="circles-loading" wrapperStyle={{}} wrapperClass="loading" visible={true} />
                 </div>
