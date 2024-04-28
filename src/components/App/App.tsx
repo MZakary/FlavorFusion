@@ -51,11 +51,11 @@ const App: React.FC = () => {
           element: <Header />,
           children: [
             { element: <Main />, index: true },
-            { path: 'recipes', element: isLoading ? null : <Gallery searchBar={true} title="Our Recipes" itemsGiven={recipes} />},
+            { path: 'recipes', element: <Gallery searchBar={true} title="Our Recipes" itemsGiven={recipes} />},
             { path: 'recipes/:id', element: <ProjectDetail /> },
             { path: 'contact', element: <Contact /> },
             { path: 'about-us', element: <AboutUs /> },
-            { path: 'gallery', element: isLoading ? null : <Gallery searchBar={false} title="Gallery" itemsGiven={gallery} /> },
+            { path: 'gallery', element: <Gallery searchBar={false} title="Gallery" itemsGiven={gallery} /> },
             { path: 'gallery/:id', element: <ProjectDetail /> },
             { path: '*', element: <Navigate to="/" replace /> },
           ],

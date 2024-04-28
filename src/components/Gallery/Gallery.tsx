@@ -90,57 +90,62 @@ function Gallery({ title, itemsGiven, searchBar }: { title: string, itemsGiven: 
                     />
                 </form>
             )}
-            <div className="FiltersForGallery">
 
-                <div className="filters">
-                    {/* Render checkboxes for all types */}
-                    {Array.from(new Set(itemsGiven.map(item => item.type))).map((type: string) => (
-                        <label key={type}>
-                            <input
-                                type="checkbox"
-                                checked={selectedFilters.includes(type)}
-                                onChange={() => handleFilterChange(type)}
-                            />
-                            <span>{type}</span>
-                        </label>
-                    ))}
-                </div>
-            </div>
-            {itemsGiven.length === 0 || itemsGiven === null ? (
+
+            {itemsGiven.length === 0 ? (
                 <div>
                     <Circles height="80" width="80" color="#e8d9b4" ariaLabel="circles-loading" wrapperStyle={{}} wrapperClass="loading" visible={true} />
                 </div>
             ) : (
-                <div className="ProjectContainer">
-                    {displayRecipes.map((recipe: Recipe) => (
-                        <>
-                        {/* Redo this code wtf is this */}
-                            {isGallery ? (<>
-                                    <Link to={`/recipes/${recipe.id}`} className="Project" key={recipe.id}>
-                                        <img className="ProjectImg" src={recipe.thumb} alt="" />
-                                        <h5 className="ProjectTitle">{recipe.title}</h5>
-                                        {recipe.type && recipe.description ? (<>
-                                            <div className="ProjectDetails">
-                                                <p className="ProjectType">{recipe.type}</p>
-                                                <p className="ProjectDescription">{limitDescriptionCharacters(recipe.description)}</p>
-                                            </div>
-                                        </>) : (<></>)}
-                                    </Link>
-                                </>) : (<>
-                                    <a className="Project" key={recipe.id}>
-                                        <img className="ProjectImg" src={recipe.thumb} alt="" />
-                                        <h5 className="ProjectTitle">{recipe.title}</h5>
-                                        {recipe.type && recipe.description ? (<>
-                                            <div className="ProjectDetails">
-                                                <p className="ProjectType">{recipe.type}</p>
-                                                <p className="ProjectDescription">{limitDescriptionCharacters(recipe.description)}</p>
-                                            </div>
-                                        </>) : (<></>)}
-                                    </a>
-                             </>)}
-                        </>
-                    ))}
-                </div>
+                <>
+                    <div className="FiltersForGallery">
+                        <div className="filters">
+                            {/* Render checkboxes for all types */}
+                            {Array.from(new Set(itemsGiven.map(item => item.type))).map((type: string) => (
+                                <label key={type}>
+                                    <input
+                                        type="checkbox"
+                                        checked={selectedFilters.includes(type)}
+                                        onChange={() => handleFilterChange(type)}
+                                    />
+                                    <span>{type}</span>
+                                </label>
+                            ))}
+                        </div>
+                    </div>
+                
+                
+                    <div className="ProjectContainer">
+                        {displayRecipes.map((recipe: Recipe) => (
+                            <>
+                            {/* Redo this code wtf is this */}
+                                {isGallery ? (<>
+                                        <Link to={`/recipes/${recipe.id}`} className="Project" key={recipe.id}>
+                                            <img className="ProjectImg" src={recipe.thumb} alt="" />
+                                            <h5 className="ProjectTitle">{recipe.title}</h5>
+                                            {recipe.type && recipe.description ? (<>
+                                                <div className="ProjectDetails">
+                                                    <p className="ProjectType">{recipe.type}</p>
+                                                    <p className="ProjectDescription">{limitDescriptionCharacters(recipe.description)}</p>
+                                                </div>
+                                            </>) : (<></>)}
+                                        </Link>
+                                    </>) : (<>
+                                        <a className="Project" key={recipe.id}>
+                                            <img className="ProjectImg" src={recipe.thumb} alt="" />
+                                            <h5 className="ProjectTitle">{recipe.title}</h5>
+                                            {recipe.type && recipe.description ? (<>
+                                                <div className="ProjectDetails">
+                                                    <p className="ProjectType">{recipe.type}</p>
+                                                    <p className="ProjectDescription">{limitDescriptionCharacters(recipe.description)}</p>
+                                                </div>
+                                            </>) : (<></>)}
+                                        </a>
+                                </>)}
+                            </>
+                        ))}
+                    </div>
+                </>
             )}
         </section>
     );
