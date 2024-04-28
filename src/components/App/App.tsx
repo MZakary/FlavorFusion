@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, Navigate } from 'react-router-dom';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Gallery from '../Gallery/Gallery';
@@ -57,6 +57,7 @@ const App: React.FC = () => {
             { path: 'about-us', element: <AboutUs /> },
             { path: 'gallery', element: isLoading ? null : <Gallery searchBar={false} title="Gallery" itemsGiven={gallery} /> },
             { path: 'gallery/:id', element: <ProjectDetail /> },
+            { path: '*', element: <Navigate to="/" replace /> },
           ],
         },
       ])}
