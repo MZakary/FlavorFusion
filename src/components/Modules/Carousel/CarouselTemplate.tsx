@@ -49,7 +49,7 @@ function CarouselTemplate({title, items}) {
         slidesToShow: 3,
         speed: 500,
         dots:true,   
-        //autoplay: true,
+        autoplay: true,
         
       };
     
