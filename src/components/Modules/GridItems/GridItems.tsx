@@ -46,7 +46,7 @@ function GridItems({ Title, Items }) {
             }
         });
         return Array.from(uniqueAlcoholsMap.entries()).map(([type]) => ({
-            type: type,
+            type: type
         }));
     }
 
