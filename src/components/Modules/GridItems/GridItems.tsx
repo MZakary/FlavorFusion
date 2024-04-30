@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 // Define a type for alcohol objects
 type Alcohol = {
     type: string;
-    imageUrl: string;
 };
 
 function GridItems({ Title, Items }) {
@@ -42,16 +41,16 @@ function GridItems({ Title, Items }) {
     function extractUniqueAlcohols(items: any[]): Alcohol[] {
         const uniqueAlcoholsMap = new Map<string, string>();
         items.forEach(item => {
-            if (item.type && item.typeImg) {
-                uniqueAlcoholsMap.set(item.type, item.typeImg);
+            if (item.type) {
+                uniqueAlcoholsMap.set(item.type, "");
             }
         });
-        return Array.from(uniqueAlcoholsMap.entries()).map(([type, imageUrl]) => ({
+        return Array.from(uniqueAlcoholsMap.entries()).map(([type]) => ({
             type: type,
-            imageUrl: imageUrl
         }));
     }
 
+    console.log(uniqueAlcohols);
 
     return (
         <section className="GridItems">
