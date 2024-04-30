@@ -93,7 +93,7 @@ function Gallery({ title, itemsGiven, searchBar }: { title: string, itemsGiven: 
 
 
             {itemsGiven.length === 0 ? (
-                <div>
+                <div className="LoadingSpinner">
                     <Circles height="80" width="80" color="#e8d9b4" ariaLabel="circles-loading" wrapperStyle={{}} wrapperClass="loading" visible={true} />
                 </div>
             ) : (

@@ -1,6 +1,17 @@
 .Recipes{
     margin-top: 150px;
     //border: 1px solid green;
+    min-height: 77.5vh;
+
+
+
+    .LoadingSpinner{
+        //background-color: aqua;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     & h1{
         color: $primary-dark-accent;
