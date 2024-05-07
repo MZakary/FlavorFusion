@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Map from '../Modules/Map/Map'
+import axios from "axios";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -33,9 +34,14 @@ function Contact() {
     }
   };
 
-  const handleSubmit = () => {
-    console.log(formData); // Log the form data to the console
-    // You can add code here to send the form data to a server or perform any other actions.
+  const handleSubmit = async () => {
+    try {
+      await axios.post("https://flavorfusionbackend-wsvl.onrender.com/submit-form", formData);
+      alert("Form submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred while submitting the form.");
+    }
   };
 
   return (
