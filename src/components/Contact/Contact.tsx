@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Map from '../Modules/Map/Map'
 import axios from "axios";
+import { Circles } from 'react-loader-spinner';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ function Contact() {
     phoneNumber: "",
     inquiry: "",
   });
+  const [isSending, setIsSending] = useState<boolean>(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,9 +39,6 @@ function Contact() {
   return (
     <div className="contact-page">
 
-
-
-
       <section className="Contact">
         <div className="Image">
           <img src="/Img/contact.png" alt="" />
@@ -63,7 +62,10 @@ function Contact() {
             <span className="input-group-text">Inquiry for us</span>
             <textarea name="inquiry" value={formData.inquiry} onChange={handleChange} className="form-control" aria-label="Inquiry" placeholder="Your inquiry here"></textarea>
           </div>
-          <button type="submit" className="btn SubmitButton">Send email</button>
+          {isSending ? (<button type="submit" className="btn SubmitButton"><div className="LoadingSpinner">
+                    <Circles height="80" width="80" color="#1F1F1F" ariaLabel="circles-loading" wrapperStyle={{}} wrapperClass="loading" visible={true} />
+                </div></button>) : (<button type="submit" onClick={() => setIsSending(true)} className="btn SubmitButton">Send email</button>)}
+          
         </form>
       </section>
     </div>

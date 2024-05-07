@@ -1,4 +1,11 @@
 .Contact{
+    .LoadingSpinner{
+        //background-color: aqua;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     //background-color: $secondary-dark-background;
     padding-top: 10px;
     @include add-margin-top-page;
