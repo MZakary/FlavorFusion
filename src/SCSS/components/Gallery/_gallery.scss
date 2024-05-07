@@ -110,7 +110,7 @@
                 @include Gotham-Font;
                 text-transform: uppercase;
                 position: relative;
-                color: white;
+                color: blue;
             }
         
             & input[type="checkbox"]:not(:checked) + span::after {
