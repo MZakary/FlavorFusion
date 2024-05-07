@@ -90,7 +90,6 @@
             & input[type="checkbox"]:checked + span {
                 color: $primary-dark-accent;
                 transition-duration: 0.5s;
-                @include Gotham-Font;
             }
         
             & input[type="checkbox"]:checked + span::after {
@@ -111,6 +110,7 @@
                 @include Gotham-Font;
                 text-transform: uppercase;
                 position: relative;
+                color: white;
             }
         
             & input[type="checkbox"]:not(:checked) + span::after {
