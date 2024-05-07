@@ -129,6 +129,13 @@
     animation: slideAndFadeTop 0.5s ease-in-out;
 }
 
+.LoadingSpinner{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
   @media screen and (max-width: 580px) {
     .carousel-section{
       .slick-slide div div span {

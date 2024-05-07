@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import Slider from 'react-slick';
 import { getGallery, getRecipe } from "../../API/FetchGallery";
 import "slick-carousel/slick/slick-theme.css";
+import { Circles } from 'react-loader-spinner';
 
 interface CarouselItem {
   image: string;
@@ -37,7 +38,12 @@ function CarouselTemplate({title, items}) {
 
 
     if (!Array.isArray(recipes) || recipes.length <= 0) {
-        return null;
+        return <section className='carousel-section' id='latestRecipes'>
+          <h1 className='SliderTitle'>{title}</h1>
+          <div className="LoadingSpinner">
+            <Circles height="80" width="80" color="#e8d9b4" ariaLabel="circles-loading" wrapperStyle={{}} wrapperClass="loading" visible={true} />
+          </div>
+        </section>;
       }
     
       const settings = {
