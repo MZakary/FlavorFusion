@@ -34,16 +34,6 @@ function Contact() {
     }
   };
 
-  const handleSubmit = async () => {
-    try {
-      await axios.post("https://flavorfusionbackend-wsvl.onrender.com/submit-form", formData);
-      alert("Form submitted successfully!");
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("An error occurred while submitting the form.");
-    }
-  };
-
   return (
     <div className="contact-page">
 
@@ -54,7 +44,7 @@ function Contact() {
         <div className="Image">
           <img src="/Img/contact.png" alt="" />
         </div>
-        <div className="Form">
+        <form className="Form" action="https://formsubmit.co/mitroviczakary@gmail.com" method="POST">
           <h2>Contact Us <span>Today</span>!</h2>
           <div className="input-group">
             <span className="input-group-text">First and last name</span>
@@ -73,8 +63,8 @@ function Contact() {
             <span className="input-group-text">Inquiry for us</span>
             <textarea name="inquiry" value={formData.inquiry} onChange={handleChange} className="form-control" aria-label="Inquiry" placeholder="Your inquiry here"></textarea>
           </div>
-          <button type="button" onClick={handleSubmit} className="btn SubmitButton">Send email</button>
-        </div>
+          <button type="submit" className="btn SubmitButton">Send email</button>
+        </form>
       </section>
     </div>
   );
