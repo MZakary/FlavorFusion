@@ -59,7 +59,7 @@
         }
 
         & input:focus{
-            color: $tertiary-dark-accent;
+            color: $primary-dark-accent;
         }
 
         & .searchBar {
@@ -173,6 +173,7 @@
                 color: white;
                 transition-duration: 0.5s;
                 position: relative;
+                text-align: center;
                 @include Gotham-Font;
             }
 
