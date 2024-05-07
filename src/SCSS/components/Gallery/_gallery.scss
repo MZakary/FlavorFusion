@@ -107,10 +107,10 @@
         
             & input[type="checkbox"] + span {
                 transition-duration: 0.5s;
-                @include Gotham-Font;
+                
                 text-transform: uppercase;
                 position: relative;
-                color: blue;
+                color: white;
             }
         
             & input[type="checkbox"]:not(:checked) + span::after {
